@@ -1,0 +1,25 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: config-service
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/guyujung/spring-cloud-config.git
+          username: guyujung
+          password: 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
+      label: main # 또는 다른 브랜치 또는 레이블로 변경
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, busrefresh
